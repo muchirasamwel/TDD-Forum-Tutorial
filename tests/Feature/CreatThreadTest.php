@@ -21,12 +21,26 @@ class CreatThreadTest extends TestCase
     public function test_authenticated_user_can_create_thread()
     {
         $this->signIn();
+        $thread = make('App\Thread');
+        $response=$this->post('/threads', $thread->toArray());
 
-        $thread = create('App\Thread');
-        $this->post('/threads', $thread->toArray());
-
-        $this->get($thread->path())
+        $this->get($response->headers->get('Location'))
             ->assertSee($thread->title)
             ->assertSee($thread->body);
+    }
+    function test_thread_requires_a_title(){
+        $this->expectException('Illuminate\Validation\ValidationException');
+        $this->signIn();
+        $thread=make('App\Thread',['title'=>null]);
+        $this->post('/threads',$thread->toArray())
+            ->assertSessionHasErrors('title');
+    }
+    function test_thread_requires_valid_channel_id(){
+        $this->expectException('Illuminate\Validation\ValidationException');
+        factory('App\Channel',2)->create();
+        $this->signIn();
+        $thread=make('App\Thread',['channel_id'=>5675]);
+        $this->post('/threads',$thread->toArray())
+            ->assertSessionHasErrors('channel_id');
     }
 }

@@ -19,7 +19,7 @@ Auth::routes();
 
 Route::get('/threads',"ThreadsController@index");
 Route::post('/threads',"ThreadsController@store");
-Route::post('/threads',"ThreadsController@store");
+//Route::post('/threads',"ThreadsController@store");
 //Route::resource('threads',"ThreadsController");
 Route::get('/threads/{channel}/{thread}',"ThreadsController@show");
 Route::post( '/threads/{channel}/{thread}/replies',"RepliesController@store");
