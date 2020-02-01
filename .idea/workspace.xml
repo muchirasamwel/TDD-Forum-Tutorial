@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c760cc74-11dd-45e9-8fe4-c128f85ce297" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/utilities/functions.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/CreatThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/CreatThreadTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ParticipationTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ParticipationTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ReplyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ReplyTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +138,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
+    <property name="settings.editor.splitter.proportion" value="0.25401607" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -176,7 +183,7 @@
       <workItem from="1580465984775" duration="18000" />
       <workItem from="1580466026338" duration="9428000" />
       <workItem from="1580533042232" duration="1421000" />
-      <workItem from="1580534880417" duration="12707000" />
+      <workItem from="1580534880417" duration="14754000" />
     </task>
     <servers />
   </component>
@@ -184,6 +191,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="390" y="257" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1580558928782">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="390" y="257" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1280.800@0.0.1280.800" timestamp="1580558928782" />
     <state x="668" y="210" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580473056411">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -196,6 +207,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="756" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1580546205559" />
+    <state x="155" y="48" key="SettingsEditor" timestamp="1580558935845">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="155" y="48" key="SettingsEditor/0.0.1280.800@0.0.1280.800" timestamp="1580558935845" />
     <state width="523" height="445" key="SwitcherDM" timestamp="1580458233576">
       <screen x="0" y="0" width="1280" height="800" />
     </state>

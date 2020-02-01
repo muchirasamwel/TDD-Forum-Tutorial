@@ -12,17 +12,17 @@ class ParticipationTest extends TestCase
     use DatabaseMigrations;
     public function test_unauthenticated_user_may_not_participate_on_thread(){
        $this->expectException('Illuminate\Auth\AuthenticationException');
-        $thread = factory('App\Thread')->create();
-        $reply = factory('App\Reply')->create();
+        $thread = create('App\Thread');
+        $reply = create('App\Reply');
         $this->post($thread->path()."/replies",$reply->toArray());
     }
     public function test_authenticated_user_can_participate_in_threads()
     {
-        $this->be($user=factory('App\User')->create());
+        $this->be($user=create('App\User'));
 
-        $thread = factory('App\Thread')->create();
+        $thread = create('App\Thread');
 
-        $reply = factory('App\Reply')->make();
+        $reply = make('App\Reply');
 
         $this->post($thread->path().'/replies',$reply->toArray());
 
