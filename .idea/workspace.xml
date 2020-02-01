@@ -2,13 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c760cc74-11dd-45e9-8fe4-c128f85ce297" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tests/Unit/ChannelTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Channel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Channel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/CreatThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/CreatThreadTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ParticipationTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ParticipationTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestCase.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestCase.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ReadThreadsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ReadThreadsTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,11 +145,20 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHPUnit.ChannelTest.test_channel_has_threads">
+    <configuration name="ChannelTest.test_channel_has_threads" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\ChannelTest" file="$PROJECT_DIR$/tests/Unit/ChannelTest.php" method="test_channel_has_threads" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.ChannelTest.test_channel_has_threads" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -182,7 +191,7 @@
       <workItem from="1580465984775" duration="18000" />
       <workItem from="1580466026338" duration="9428000" />
       <workItem from="1580533042232" duration="1421000" />
-      <workItem from="1580534880417" duration="23216000" />
+      <workItem from="1580534880417" duration="28766000" />
     </task>
     <servers />
   </component>
@@ -190,6 +199,18 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="456" y="62" key="#CLI_Interpreters" timestamp="1580571700568">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="456" y="62" key="#CLI_Interpreters/0.0.1280.800@0.0.1280.800" timestamp="1580571700568" />
+    <state x="358" y="4" width="922" height="792" key="#ChannelTest.test_channel_has_threads" timestamp="1580571738215">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="358" y="4" width="922" height="792" key="#ChannelTest.test_channel_has_threads/0.0.1280.800@0.0.1280.800" timestamp="1580571738215" />
+    <state x="569" y="0" key="#PHP" timestamp="1580571724740">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="569" y="0" key="#PHP/0.0.1280.800@0.0.1280.800" timestamp="1580571724740" />
     <state x="390" y="257" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1580558928782">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -218,9 +239,9 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="317" y="232" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1580534883364" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1580566963295">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1580573492675">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1580566963295" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1580573492675" />
   </component>
 </project>
