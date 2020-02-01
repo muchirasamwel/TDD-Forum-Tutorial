@@ -38,10 +38,24 @@
                     <li class="m-3">
                         <a href="/threads/create"> New Thread</a>
                     </li>
-                    <li class="m-3"><a href="/threads">All Threads</a></li>
+                    <li class="m-3">
+                        <div class="dropdown">
+                            <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                Threads
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                <a class="dropdown-item" href="/threads">All Threads</a>
+                                @if(auth()->check())
+                                    <a class="dropdown-item" href="/threads?by= {{auth()->user()->name}}">My Threads</a>
+                                @endif
+                            </div>
+                        </div>
+
+                    </li>
                     <li>
                         <div class="dropdown m-3">
-                            <a  href="#" class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                            <a href="#" class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">
                                 Channels
                             </a>
