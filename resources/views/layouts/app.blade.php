@@ -35,12 +35,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
+                    <li class="m-3">
+                        <a href="/threads/create"> New Thread</a>
+                    </li>
                     <li class="m-3"><a href="/threads">All Threads</a></li>
                     <li>
                         <div class="dropdown m-3">
-                            <a class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+                            <a  href="#" class="dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
                                aria-haspopup="true" aria-expanded="false">
-                                Dropdown
+                                Channels
                             </a>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                                 @foreach(\App\Channel::all() as $channel)
@@ -49,6 +52,7 @@
                             </div>
                         </div>
                     </li>
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->

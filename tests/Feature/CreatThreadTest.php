@@ -35,6 +35,13 @@ class CreatThreadTest extends TestCase
         $this->post('/threads',$thread->toArray())
             ->assertSessionHasErrors('title');
     }
+    function test_thread_requires_a_body(){
+        $this->expectException('Illuminate\Validation\ValidationException');
+        $this->signIn();
+        $thread=make('App\Thread',['body'=>null]);
+        $this->post('/threads',$thread->toArray())
+            ->assertSessionHasErrors('body');
+    }
     function test_thread_requires_valid_channel_id(){
         $this->expectException('Illuminate\Validation\ValidationException');
         factory('App\Channel',2)->create();
