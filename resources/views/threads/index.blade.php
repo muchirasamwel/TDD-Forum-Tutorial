@@ -15,6 +15,7 @@
                                     {{$thread->body}}
                                 </div>
                             </article>
+                            <br>
                         @endforeach
                     </div>
                 </div>
