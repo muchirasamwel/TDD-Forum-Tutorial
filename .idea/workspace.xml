@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="c760cc74-11dd-45e9-8fe4-c128f85ce297" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Activity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProfileController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reply.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reply.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ProfileTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ProfileTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/RecordsActivity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/RecordsActivity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/CreatThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/CreatThreadTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/FavouriteTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/FavouriteTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ReadThreadsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ReadThreadsTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -268,10 +268,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="317" y="248" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1580611830667" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1580667190017">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1580668424460">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1580667190017" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1580668424460" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1580625232615" />
   </component>
 </project>

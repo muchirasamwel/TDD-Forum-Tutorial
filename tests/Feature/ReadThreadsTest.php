@@ -46,6 +46,7 @@ class ReadThreadsTest extends TestCase
 
         $this->get('/threads/' . $channel->slug)
             ->assertSee($threadInChannel->title)
+            ->assertSee($threadInChannel->body)
             ->assertDontSee($threadNotInChannel->title);
     }
 
