@@ -1,10 +1,10 @@
 <?php
-function create($class, $attributes = [])
+function create($class, $attributes = [],$items=null)
 {
-    return factory($class)->create($attributes);
+    return factory($class,$items)->create($attributes);
 }
 
-function make($class, $attributes = [])
+function make($class, $attributes = [],$items=null)
 {
-    return factory($class)->make($attributes);
+    return factory($class,$items)->make($attributes);
 }
