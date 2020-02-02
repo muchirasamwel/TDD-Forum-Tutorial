@@ -1,4 +1,4 @@
-<div class="card">
+<div id="reply-{{ $reply->id }}"  class="card">
     <div class="card-header">
         <div class="level">
             <h5 class="flex">
@@ -6,7 +6,6 @@
                     {{ $reply->owner->name }}
                 </a> said {{ $reply->created_at->diffForHumans() }}...
             </h5>
-
             <div>
                 <form method="POST" action="/replies/{{ $reply->id }}/favorites">
                     {{ csrf_field() }}
