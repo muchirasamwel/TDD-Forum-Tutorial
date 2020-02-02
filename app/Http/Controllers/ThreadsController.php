@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Channel;
+use App\Filters\ThreadFilters;
 use App\Thread;
 use App\User;
 use Illuminate\Http\Request;
@@ -15,20 +15,16 @@ class ThreadsController extends Controller
         $this->middleware('auth')->except(['index', 'show']);
     }
 
-    public function index($channel_slug = null)
+    public function index($channel_slug = null,ThreadFilters $filters)
     {
-        if ($channel_slug) {
-            $channel_id=Channel::where('slug',$channel_slug)->first()->id;
-            $threads = Thread::where('channel_id',$channel_id);
-        } else
-            $threads = Thread::latest();
+        $threads = Thread::latest()->filter($filters);
 
-        if($username=request('by'))
-        {
-            $user=User::where('name',$username)->firstOrFail();
-            $threads->where('user_id',$user->id);
+        if ($channel_slug) {
+            $channel_id = Channel::where('slug', $channel_slug)->first()->id;
+            $threads->where('channel_id', $channel_id);
         }
-        $threads=$threads->get();
+
+        $threads = $threads->get();
         return view('threads.index', compact('threads'));
     }
 
@@ -58,4 +54,5 @@ class ThreadsController extends Controller
         ]);
         return redirect($thread->path());
     }
+
 }

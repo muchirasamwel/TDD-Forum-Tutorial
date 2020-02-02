@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c760cc74-11dd-45e9-8fe4-c128f85ce297" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Filters/Filters.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Filters/ThreadFilters.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ReadThreadsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ReadThreadsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,6 +139,9 @@
     <property name="settings.editor.splitter.proportion" value="0.25401607" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Filters" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
@@ -190,7 +192,8 @@
       <workItem from="1580465984775" duration="18000" />
       <workItem from="1580466026338" duration="9428000" />
       <workItem from="1580533042232" duration="1421000" />
-      <workItem from="1580534880417" duration="34467000" />
+      <workItem from="1580534880417" duration="34869000" />
+      <workItem from="1580611708280" duration="4787000" />
     </task>
     <servers />
   </component>
@@ -218,14 +221,34 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="668" y="210" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1580473056411" />
+    <state x="635" y="82" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1580614168222">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="635" y="82" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1280.800@0.0.1280.800" timestamp="1580614168222" />
     <state x="556" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1580546111309">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="556" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.800@0.0.1280.800" timestamp="1580546111309" />
-    <state x="756" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580546205559">
+    <state x="756" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580613375879">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="756" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1580546205559" />
+    <state x="756" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1280.800@0.0.1280.800" timestamp="1580613375879" />
+    <state x="763" y="10" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1580615895793">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="763" y="10" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0/0.0.1280.800@0.0.1280.800" timestamp="1580615895793" />
+    <state x="758" y="0" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1" timestamp="1580587183738">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="758" y="0" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1280.800@0.0.1280.800" timestamp="1580587183738" />
+    <state x="788" y="158" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1" timestamp="1580614577631">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="788" y="158" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1/0.0.1280.800@0.0.1280.800" timestamp="1580614577631" />
+    <state x="450" y="223" key="NewPhpClassDialog" timestamp="1580614475719">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="450" y="223" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1580614475719" />
     <state x="155" y="48" key="SettingsEditor" timestamp="1580558935845">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -234,13 +257,17 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state width="523" height="445" key="SwitcherDM/0.0.1280.800@0.0.1280.800" timestamp="1580458233576" />
-    <state x="317" y="232" key="com.intellij.ide.util.TipDialog" timestamp="1580534883364">
+    <state x="851" y="323" key="VCS.ChangelistChooser" timestamp="1580614040714">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="317" y="232" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1580534883364" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1580583235431">
+    <state x="851" y="323" key="VCS.ChangelistChooser/0.0.1280.800@0.0.1280.800" timestamp="1580614040714" />
+    <state x="317" y="248" key="com.intellij.ide.util.TipDialog" timestamp="1580611830667">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1580583235431" />
+    <state x="317" y="248" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1580611830667" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1580613077415">
+      <screen x="0" y="0" width="1280" height="800" />
+    </state>
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1580613077415" />
   </component>
 </project>
