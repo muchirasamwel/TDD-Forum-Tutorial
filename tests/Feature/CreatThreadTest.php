@@ -13,9 +13,12 @@ class CreatThreadTest extends TestCase
 
     public function test_guest_cannot_create_thread()
     {
-        $this->expectException('Illuminate\Auth\AuthenticationException');
-        $this->post("/threads",[]);
-        $this->get('/threads/create');
+        //$this->expectException('Illuminate\Auth\AuthenticationException');
+        $this->withExceptionHandling()->post("/threads",[])
+        ->assertRedirect('/login');
+
+        $this->withExceptionHandling()->get('/threads/create')
+            ->assertRedirect('/login');
 
     }
     public function test_authenticated_user_can_create_thread()
@@ -29,25 +32,25 @@ class CreatThreadTest extends TestCase
             ->assertSee($thread->body);
     }
     function test_thread_requires_a_title(){
-        $this->expectException('Illuminate\Validation\ValidationException');
+      //  $this->expectException('Illuminate\Validation\ValidationException');
         $this->signIn();
         $thread=make('App\Thread',['title'=>null]);
-        $this->post('/threads',$thread->toArray())
+        $this->withExceptionHandling()->post('/threads',$thread->toArray())
             ->assertSessionHasErrors('title');
     }
     function test_thread_requires_a_body(){
-        $this->expectException('Illuminate\Validation\ValidationException');
+       // $this->expectException('Illuminate\Validation\ValidationException');
         $this->signIn();
         $thread=make('App\Thread',['body'=>null]);
-        $this->post('/threads',$thread->toArray())
+        $this->withExceptionHandling()->post('/threads',$thread->toArray())
             ->assertSessionHasErrors('body');
     }
     function test_thread_requires_valid_channel_id(){
-        $this->expectException('Illuminate\Validation\ValidationException');
+        //$this->expectException('Illuminate\Validation\ValidationException');
         factory('App\Channel',2)->create();
         $this->signIn();
         $thread=make('App\Thread',['channel_id'=>5675]);
-        $this->post('/threads',$thread->toArray())
+        $this->withExceptionHandling()->post('/threads',$thread->toArray())
             ->assertSessionHasErrors('channel_id');
     }
 }

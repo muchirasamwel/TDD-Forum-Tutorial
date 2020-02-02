@@ -11,10 +11,11 @@ class ParticipationTest extends TestCase
 {
     use DatabaseMigrations;
     public function test_unauthenticated_user_may_not_participate_on_thread(){
-       $this->expectException('Illuminate\Auth\AuthenticationException');
-        $thread = create('App\Thread');
+       $thread = create('App\Thread');
         $reply = create('App\Reply');
-        $this->post($thread->path()."/replies",$reply->toArray());
+        $response=$this->post($thread->path()."/replies",$reply->toArray())
+            ->assertDontSee($reply->body);
+       // dump($response);
     }
     public function test_authenticated_user_can_participate_in_threads()
     {
@@ -30,11 +31,11 @@ class ParticipationTest extends TestCase
             ->assertSee($reply->body);
     }
     function test_reply_requires_a_body(){
-        $this->expectException('Illuminate\Validation\ValidationException');
          $this->signIn();
         $thread = create('App\Thread');
         $reply=make('App\Reply',['body'=>null]);
-        $this->post($thread->path().'/replies',$reply->toArray());
+        $this->withExceptionHandling()->post($thread->path().'/replies',$reply->toArray())
+        ->assertSessionHasErrors('body');
 
     }
 }
