@@ -8,7 +8,7 @@
                 <div class="card">
                     <div class="card-header">Forum Threads</div>
                     <div class="card-body">
-                        @foreach($threads as $thread)
+                        @forelse($threads as $thread)
                             <article>
                                 <div class="card">
                                     <div class="card-header level">
@@ -25,7 +25,9 @@
                                 </div>
                             </article>
                             <br>
-                        @endforeach
+                        @empty
+                            <p>No Threads Available for this Channel</p>
+                        @endforelse
                     </div>
                 </div>
             </div>

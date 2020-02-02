@@ -15,10 +15,8 @@
                     <article>
                         <div class="card-header level">
                             <h4 class="flex">
-                                {{$thread->creator->name}} Posted:
-                                <a href="{{$thread->path()}}">
-                                     {{$thread->title}}
-                                </a>
+                                <a href="{{ route('profile', $thread->creator) }}">{{ $thread->creator->name }}</a> posted:
+                                <a href="{{ $thread->path() }}">{{ $thread->title }}</a>
                             </h4>
                             <strong><a href="{{$thread->path()}}">
                                     {{$thread->replies_count}}

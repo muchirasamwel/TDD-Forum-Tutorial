@@ -12,12 +12,14 @@
                             </span>
 
                         @if (Auth::check())
-                            <form action="{{ $thread->path() }}" method="POST">
-                                {{ csrf_field() }}
-                                {{ method_field('DELETE') }}
+                            @can ('update', $thread)
+                                <form action="{{ $thread->path() }}" method="POST">
+                                    {{ csrf_field() }}
+                                    {{ method_field('DELETE') }}
 
-                                <button type="submit" class="btn btn-link">Delete Thread</button>
-                            </form>
+                                    <button type="submit" class="btn btn-link">Delete Thread</button>
+                                </form>
+                            @endcan
                         @endif
 
                     </div>
@@ -33,6 +35,7 @@
                 @endforeach
                 {{$replies->links()}}
                 @if(auth()->check())
+
                     <form method="POST" action="{{$thread->path().'/replies'}}">
                         {{csrf_field()}}
                         <div class="form-group">
@@ -53,7 +56,8 @@
                         <div>
                             Thread was published {{$thread->created_at->diffForHumans()}}
                             by <a href="#">{{$thread->creator->name}}</a>, and
-                            currently has {{$thread->replies_count}} {{Str::plural('Comment',$thread->replies_count)}}
+                            currently
+                            has {{$thread->replies_count}} {{\Illuminate\Support\Str::plural('Comment',$thread->replies_count)}}
                         </div>
                     </div>
                 </div>
