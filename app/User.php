@@ -44,4 +44,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Thread::class)->latest();
     }
+    public function activity()
+    {
+        return $this->hasMany(Activity::class);
+    }
 }
