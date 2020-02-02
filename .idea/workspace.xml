@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c760cc74-11dd-45e9-8fe4-c128f85ce297" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Favoritable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Feature/ProfileTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FavouriteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FavouriteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reply.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reply.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/replies.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/replies.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +198,7 @@
       <workItem from="1580466026338" duration="9428000" />
       <workItem from="1580533042232" duration="1421000" />
       <workItem from="1580534880417" duration="34869000" />
-      <workItem from="1580611708280" duration="17944000" />
+      <workItem from="1580611708280" duration="19969000" />
     </task>
     <servers />
   </component>
@@ -219,10 +222,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="390" y="257" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1280.800@0.0.1280.800" timestamp="1580558928782" />
-    <state x="668" y="210" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580473056411">
+    <state x="668" y="210" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580632310398">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="668" y="210" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1580473056411" />
+    <state x="668" y="210" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.800@0.0.1280.800" timestamp="1580632310398" />
     <state x="635" y="82" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog" timestamp="1580614168222">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -267,10 +270,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="317" y="248" key="com.intellij.ide.util.TipDialog/0.0.1280.800@0.0.1280.800" timestamp="1580611830667" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1580631192147">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1580633183019">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1580631192147" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1580633183019" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1580625232615" />
   </component>
 </project>

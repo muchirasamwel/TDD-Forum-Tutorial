@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header"><h4><a href="#">{{$thread->creator->name}}</a> Posted {{$thread->title}}
+                    <div class="card-header"><h4><a href="{{ route('profile', $thread->creator) }}">{{ $thread->creator->name }}</a> Posted: {{$thread->title}}
                         </h4></div>
                     <div class="card-body">
                         <div>
