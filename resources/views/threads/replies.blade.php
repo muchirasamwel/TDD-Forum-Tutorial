@@ -3,20 +3,20 @@
         <div class="level">
             <h5 class="flex">
                 <a href="#">
-                    {{$reply->owner->name}}</a> Said
-                {{$reply->created_at->diffForHumans()}}
+                    {{ $reply->owner->name }}
+                </a> said {{ $reply->created_at->diffForHumans() }}...
             </h5>
-            <div>
 
-                <form action="/replies/{{$reply->id}}/favorites" method="POST">
-                   {{csrf_field()}}
-                    <button type="submit" class="btn btn-secondary" {{$reply->isFavorited() ? 'disabled':''}}>
-                        {{$reply->favorites()->count()}} Favorite(s)
+            <div>
+                <form method="POST" action="/replies/{{ $reply->id }}/favorites">
+                    {{ csrf_field() }}
+
+                    <button type="submit" class="btn btn-default" {{ $reply->isFavorited() ? 'disabled' : '' }}>
+                        {{ $reply->favorites_count }} Favorite(s)
                     </button>
                 </form>
             </div>
         </div>
-
 
     </div>
     <div class="card-body">
