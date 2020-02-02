@@ -30,7 +30,7 @@ class ThreadsController extends Controller
         return view('threads.create');
     }
 
-    public function show($channel_id, Thread $thread)
+    public function show($channel, Thread $thread)
     {
 
         return view('threads.show', [
@@ -69,6 +69,16 @@ class ThreadsController extends Controller
         }
         $threads = $threads->get();
         return $threads;
+    }
+    public function destroy($channel, Thread $thread)
+    {
+        $thread->delete();
+
+        if (request()->wantsJson()) {
+            return response([], 204);
+        }
+
+        return redirect('/threads');
     }
 
 }

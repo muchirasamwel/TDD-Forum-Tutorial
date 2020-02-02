@@ -5,8 +5,22 @@
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header"><h4><a href="{{ route('profile', $thread->creator) }}">{{ $thread->creator->name }}</a> Posted: {{$thread->title}}
-                        </h4></div>
+                    <div class="card-header level">
+                            <span class="flex">
+                                <a href="{{ route('profile', $thread->creator) }}">{{ $thread->creator->name }}</a> posted:
+                                {{ $thread->title }}
+                            </span>
+
+                        @if (Auth::check())
+                            <form action="{{ $thread->path() }}" method="POST">
+                                {{ csrf_field() }}
+                                {{ method_field('DELETE') }}
+
+                                <button type="submit" class="btn btn-link">Delete Thread</button>
+                            </form>
+                        @endif
+
+                    </div>
                     <div class="card-body">
                         <div>
                             {{$thread->body}}
@@ -19,7 +33,6 @@
                 @endforeach
                 {{$replies->links()}}
                 @if(auth()->check())
-
                     <form method="POST" action="{{$thread->path().'/replies'}}">
                         {{csrf_field()}}
                         <div class="form-group">
@@ -28,7 +41,6 @@
                         </div>
                         <button type="submit" class="btn btn-secondary">Post</button>
                     </form>
-
                 @else
                     <div class="text-center">
                         Please <a href="{{route('login')}}">Sign in</a> to participate
@@ -41,7 +53,7 @@
                         <div>
                             Thread was published {{$thread->created_at->diffForHumans()}}
                             by <a href="#">{{$thread->creator->name}}</a>, and
-                            currently has {{$thread->replies_count}} Comment(s)
+                            currently has {{$thread->replies_count}} {{Str::plural('Comment',$thread->replies_count)}}
                         </div>
                     </div>
                 </div>

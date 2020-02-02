@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container col-md-8 offset-2">
         <div class="page-header">
             <h2>
                 {{ $profileUser->name }}
@@ -12,19 +12,23 @@
             <div class="card-header">All Threads</div>
             <div class="card-body">
                 @foreach($threads as $thread)
-
                     <article>
-                        <div class="level">
+                        <div class="card-header level">
                             <h4 class="flex">
+                                {{$thread->creator->name}} Posted:
                                 <a href="{{$thread->path()}}">
-                                    {{$thread->title}}
+                                     {{$thread->title}}
                                 </a>
                             </h4>
-                            <strong><a href="{{$thread->path()}}">{{$thread->replies_count}} comment(s)</a></strong>
+                            <strong><a href="{{$thread->path()}}">
+                                    {{$thread->replies_count}}
+                                    {{\Illuminate\Support\Str::plural('Comment',$thread->replies_count)}}
+                                </a></strong>
                         </div>
-                        <div>
+                        <div class="card-body">
                             {{$thread->body}}
                         </div>
+
                     </article>
                     <hr>
 
