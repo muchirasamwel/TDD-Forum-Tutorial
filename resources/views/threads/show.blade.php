@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+    <thread-view :initial-replies-count="{{ $thread->replies_count }}" inline-template>
     <div class="container">
         <div class="row">
             <div class="col-md-8">
@@ -30,12 +31,15 @@
                     </div>
                 </div>
                 <hr>
-                @foreach($replies as $reply)
-                    @include('threads.replies')
-                @endforeach
-                {{$replies->links()}}
-                @if(auth()->check())
 
+                <replies :data="{{ $thread->replies }}"
+                         @added="repliesCount++"
+                         @removed="repliesCount--"></replies>
+{{--                @foreach($replies as $reply)--}}
+{{--                    @include('threads.replies')--}}
+{{--                @endforeach--}}
+{{--                {{$replies->links()}}--}}
+                @if(auth()->check())
                     <form method="POST" action="{{$thread->path().'/replies'}}">
                         {{csrf_field()}}
                         <div class="form-group">
@@ -57,11 +61,13 @@
                             Thread was published {{$thread->created_at->diffForHumans()}}
                             by <a href="#">{{$thread->creator->name}}</a>, and
                             currently
-                            has {{$thread->replies_count}} {{\Illuminate\Support\Str::plural('Comment',$thread->replies_count)}}
+                            has <span
+                                v-text="repliesCount"></span> {{\Illuminate\Support\Str::plural('Comment',$thread->replies_count)}}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </thread-view>
 @endsection
