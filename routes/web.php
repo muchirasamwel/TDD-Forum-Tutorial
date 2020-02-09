@@ -21,12 +21,14 @@ Route::get('/threads',"ThreadsController@index");
 Route::post('/threads',"ThreadsController@store");
 //Route::resource('threads',"ThreadsController");
 Route::get('/threads/{channel}/{thread}',"ThreadsController@show");
-
 Route::get('threads/{channel}', 'ThreadsController@index');
-Route::post( '/threads/{channel}/{thread}/replies',"RepliesController@store");
+Route::delete('threads/{channel}/{thread}', 'ThreadsController@destroy');
+
 Route::post('/replies/{reply}/favorites', 'FavouriteController@store');
 Route::get('/profiles/{user}', 'ProfileController@show')->name('profile');
-Route::delete('threads/{channel}/{thread}', 'ThreadsController@destroy');
+
+Route::post( '/threads/{channel}/{thread}/replies',"RepliesController@store");
 Route::delete('/replies/{reply}', 'RepliesController@destroy');
+Route::patch('/replies/{reply}', 'RepliesController@update');
 
 Route::get('/home', 'HomeController@index')->name('home');

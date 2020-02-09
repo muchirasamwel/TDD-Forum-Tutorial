@@ -28,6 +28,7 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
     ];
 });
+
 $factory->define(Thread::class, function (Faker $faker) {
     return [
         'user_id' => function () {
@@ -40,6 +41,7 @@ $factory->define(Thread::class, function (Faker $faker) {
         'body' => $faker->paragraph,
     ];
 });
+
 $factory->define(Channel::class, function (Faker $faker) {
     $name=$faker->word;
     return [
@@ -48,6 +50,7 @@ $factory->define(Channel::class, function (Faker $faker) {
         'slug' => $name,
     ];
 });
+
 $factory->define(Reply::class, function (Faker $faker) {
     return [
         'user_id' => function () {

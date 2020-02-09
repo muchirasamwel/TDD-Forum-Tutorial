@@ -29,6 +29,7 @@
         .flex{
             flex: 1;
         }
+        [v-cloak] { display: none; }
     </style>
 </head>
 <body >
