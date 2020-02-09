@@ -11,7 +11,7 @@
         <div class="card">
             <div class="card-header">All Activities</div>
             <div class="card-body">
-                @foreach ($activities as $date => $activity)
+                @forelse($activities as $date => $activity)
                     <h3 class="page-header">{{ $date }}</h3>
                     @foreach ($activity as $record)
                         @if (view()->exists("profiles.activities.{$record->type}"))
@@ -20,7 +20,10 @@
                             <br>
                     @endforeach
                     <hr>
-                @endforeach
+                @empty
+                    <p>No Activities Yet</p>
+                @endforelse
+
             </div>
         </div>
     </div>
