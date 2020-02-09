@@ -35,24 +35,20 @@
                 <replies :data="{{ $thread->replies }}"
                          @added="repliesCount++"
                          @removed="repliesCount--"></replies>
-{{--                @foreach($replies as $reply)--}}
-{{--                    @include('threads.replies')--}}
-{{--                @endforeach--}}
-{{--                {{$replies->links()}}--}}
-                @if(auth()->check())
-                    <form method="POST" action="{{$thread->path().'/replies'}}">
-                        {{csrf_field()}}
-                        <div class="form-group">
-                            <textarea name="body" id="" cols="30" rows="10"
-                                      placeholder="Comment ...." class="form-control"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-secondary">Post</button>
-                    </form>
-                @else
-                    <div class="text-center">
-                        Please <a href="{{route('login')}}">Sign in</a> to participate
-                    </div>
-                @endif
+{{--                @if(auth()->check())--}}
+{{--                    <form method="POST" action="{{$thread->path().'/replies'}}">--}}
+{{--                        {{csrf_field()}}--}}
+{{--                        <div class="form-group">--}}
+{{--                            <textarea name="body" id="" cols="30" rows="10"--}}
+{{--                                      placeholder="Comment ...." class="form-control"></textarea>--}}
+{{--                        </div>--}}
+{{--                        <button type="submit" class="btn btn-secondary">Post</button>--}}
+{{--                    </form>--}}
+{{--                @else--}}
+{{--                    <div class="text-center">--}}
+{{--                        Please <a href="{{route('login')}}">Sign in</a> to participate--}}
+{{--                    </div>--}}
+{{--                @endif--}}
             </div>
             <div class="col-md-4">
                 <div class="card">
