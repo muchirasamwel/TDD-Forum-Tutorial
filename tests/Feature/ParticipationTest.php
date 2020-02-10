@@ -79,7 +79,8 @@ class ParticipationTest extends TestCase
 
         $reply = create('App\Reply', ['user_id' => auth()->id()]);
 
-        $updatedReply = 'You been changed, fool.';
+        $updatedReply = 'New content updated.';
+
         $this->patch("/replies/{$reply->id}", ['body' => $updatedReply]);
 
         $this->assertDatabaseHas('replies', ['id' => $reply->id, 'body' => $updatedReply]);
