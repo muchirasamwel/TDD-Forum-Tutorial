@@ -30,6 +30,9 @@ Route::post( '/threads/{channel}/{thread}/subscriptions',"ThreadSubscriptionCont
 Route::delete('/threads/{channel}/{thread}/subscriptions', 'ThreadSubscriptionsController@destroy')->middleware('auth');
 
 Route::get('/profiles/{user}', 'ProfileController@show')->name('profile');
+Route::get('/profiles/{user}/notifications', 'UserNotificationsController@index');
+Route::delete('/profiles/{user}/notifications/{notification}', 'UserNotificationsController@destroy');
+
 
 Route::delete('/replies/{reply}', 'RepliesController@destroy');
 Route::patch('/replies/{reply}', 'RepliesController@update');
