@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c760cc74-11dd-45e9-8fe4-c128f85ce297" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/Feature/SubscribeToThreadTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/SubscribeButton.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Flash.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Flash.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Replies.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Replies.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadSubscriptionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadSubscriptionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/pages/Thread.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/pages/Thread.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +211,7 @@
       <workItem from="1581501174888" duration="10160000" />
       <workItem from="1581660411425" duration="2248000" />
       <workItem from="1581749755332" duration="872000" />
-      <workItem from="1581787492852" duration="1374000" />
+      <workItem from="1581787492852" duration="2948000" />
     </task>
     <servers />
   </component>
@@ -284,10 +287,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="298" y="157" width="683" height="486" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1581513525402" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1581789430767">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1581791226212">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1581789430767" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1581791226212" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1581241188700" />
   </component>
 </project>
