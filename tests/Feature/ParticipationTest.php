@@ -27,8 +27,9 @@ class ParticipationTest extends TestCase
 
         $this->post($thread->path().'/replies',$reply->toArray());
 
-        $this->get($thread->path())
-            ->assertSee($reply->body);
+        $this->assertDatabaseHas('replies',['body'=>$reply->body]);
+        $this->assertEquals(1,$thread->fresh()->replies_count);
+
     }
     public function test_reply_requires_a_body(){
          $this->signIn();
@@ -55,6 +56,7 @@ class ParticipationTest extends TestCase
 
         $this->delete("/replies/{$reply->id}")->assertStatus(302);
         $this->assertDatabaseMissing('replies', ['id' => $reply->id]);
+        self::assertEquals(0,$reply->thread->fresh()->replies_count);
     }
 
     function test_unauthorized_users_cannot_update_replies()
@@ -77,7 +79,8 @@ class ParticipationTest extends TestCase
 
         $reply = create('App\Reply', ['user_id' => auth()->id()]);
 
-        $updatedReply = 'You been changed, fool.';
+        $updatedReply = 'New content updated.';
+
         $this->patch("/replies/{$reply->id}", ['body' => $updatedReply]);
 
         $this->assertDatabaseHas('replies', ['id' => $reply->id, 'body' => $updatedReply]);

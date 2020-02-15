@@ -4,25 +4,28 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateThreadsTable extends Migration
+class CreateThreadSubscriptionsTable extends Migration
 {
-
     /**
      * Run the migrations.
+     *
      * @return void
      */
     public function up()
     {
-        Schema::create('threads', function (Blueprint $table) {
+        Schema::create('thread_subscriptions', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('channel_id');
             $table->unsignedInteger('user_id');
-            $table->unsignedInteger('replies_count')->default(0);
-            $table->string('title');
-            $table->text('body');
+            $table->unsignedInteger('thread_id');
             $table->timestamps();
+
+            $table->foreign('thread_id')
+                ->references('id')
+                ->on('threads')
+                ->onDelete('cascade');
         });
     }
+
     /**
      * Reverse the migrations.
      *
@@ -30,6 +33,6 @@ class CreateThreadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('threads');
+        Schema::dropIfExists('thread_subscriptions');
     }
 }

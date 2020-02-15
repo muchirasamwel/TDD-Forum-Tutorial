@@ -24,6 +24,7 @@
                         <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
                             <a class="dropdown-item" href="/threads">All Threads</a>
                             <a class="dropdown-item" href="/threads?popular=1">Popular Threads</a>
+                            <a class="dropdown-item" href="/threads?unanswered=1">Unanswered Threads</a>
                             @if(auth()->check())
                                 <a class="dropdown-item" href="/threads?by= {{auth()->user()->name}}">My Threads</a>
                             @endif
