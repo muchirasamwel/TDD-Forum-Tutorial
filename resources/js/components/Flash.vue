@@ -1,5 +1,5 @@
 <template>
-    <div class="alert alert-success alert-flash" role="alert" v-show="show">
+    <div :class="type" role="alert" v-show="show">
         <strong>Action Successful !!</strong> {{ body }}
     </div>
 </template>
@@ -10,7 +10,8 @@
         data() {
             return {
                 body: '',
-                show: false
+                show: false,
+                type:'success'
             }
         },
         created() {
@@ -23,6 +24,12 @@
         },
         methods: {
             flash(message) {
+                if (message.toLowerCase().indexOf('error') >= 0)
+                    this.type = 'flash-error';
+                else if (message.toLowerCase().indexOf('success') >= 0)
+                    this.type = 'flash-success';
+                else
+                    this.type = 'flash-neutral';
                 this.body = message;
                 this.show = true;
                 this.hide();

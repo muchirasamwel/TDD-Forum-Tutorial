@@ -26,6 +26,8 @@ Route::delete('threads/{channel}/{thread}', 'ThreadsController@destroy');
 Route::post( '/threads/{channel}/{thread}/replies',"RepliesController@store");
 Route::get( '/threads/{channel}/{thread}/replies',"RepliesController@index");
 
+Route::post( '/threads/{channel}/{thread}/subscriptions',"ThreadSubscriptionController@store")->middleware('auth');
+
 Route::get('/profiles/{user}', 'ProfileController@show')->name('profile');
 
 Route::delete('/replies/{reply}', 'RepliesController@destroy');
