@@ -10,10 +10,16 @@ class NotificationsTest extends TestCase
 {
     use DatabaseMigrations;
 
+
+    public function setUp():void
+    {
+        parent::setUp();
+
+        $this->signIn();
+    }
+
     function test_notification_prepared_when_subscribed_thread_receives_new_reply_not_by_the_logged_user()
     {
-        $this->signIn();
-
         $thread = create('App\Thread')->subscribe();
 
         $this->assertCount(0, auth()->user()->notifications);
@@ -37,25 +43,17 @@ class NotificationsTest extends TestCase
 
     function test_user_can_fetch_their_unread_notifications()
     {
-
-        $this->signIn();
-
         create(DatabaseNotification::class);
 
-        $this->assertCount(
-            1,
-            $this->getJson("/profiles/" . auth()->user()->name . "/notifications")->json()
-        );
+        $this->assertCount(1, $this->getJson("/profiles/" . auth()->user()->name . "/notifications")->json());
     }
 
     function test_user_can_mark_a_notification_as_read()
     {
-
-        $this->signIn();
-
         create(DatabaseNotification::class);
 
         tap(auth()->user(), function ($user) {
+
             $this->assertCount(1, $user->unreadNotifications);
 
             $this->delete("/profiles/{$user->name}/notifications/" . $user->unreadNotifications->first()->id);
