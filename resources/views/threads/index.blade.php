@@ -12,7 +12,15 @@
                             <article>
                                 <div class="card">
                                     <div class="card-header level">
-                                        <a href="{{$thread->path()}}" class="flex">{{$thread->title}}</a>
+                                        <a href="{{$thread->path()}}" class="flex">
+                                            @if ($thread->hasUpdatesFor(auth()->user()))
+                                                <strong>
+                                                    {{ $thread->title }}
+                                                </strong>
+                                            @else
+                                                {{ $thread->title }}
+                                            @endif
+                                        </a>
                                         <div>
                                            {{$thread->replies_count}} {{Str::plural('Comment',$thread->replies_count)}}
                                         </div>
