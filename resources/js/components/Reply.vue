@@ -17,7 +17,9 @@
             <div v-if="editing">
                 <form @submit.prevent="update">
                     <div class="form-group">
-                        <textarea class="form-control" v-model="body" required="true" ></textarea>
+                        <textarea class="form-control" v-model="body" required="true">
+                        go<!--    adding at js here after play around https://github.com/muchirasamwel/Play-With-At-JS-->
+                        </textarea>
                     </div>
 
                     <button class="btn btn-xs btn-primary">Update</button>
@@ -25,7 +27,9 @@
                 </form>
             </div>
 
-            <div v-else v-text="body"></div>
+            <div v-else
+                 v-html="body">
+            </div>
         </div>
 
         <div class="panel-footer level" v-if="canUpdate">
@@ -35,7 +39,9 @@
     </div>
 </template>
 <script>
+
     import Favorite from './Favorite.vue';
+
     import moment from 'moment';
 
     export default {

@@ -2296,6 +2296,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -56463,27 +56467,35 @@ var render = function() {
               },
               [
                 _c("div", { staticClass: "form-group" }, [
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.body,
-                        expression: "body"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: { required: "true" },
-                    domProps: { value: _vm.body },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
+                  _c(
+                    "textarea",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.body,
+                          expression: "body"
                         }
-                        _vm.body = $event.target.value
+                      ],
+                      staticClass: "form-control",
+                      attrs: { required: "true" },
+                      domProps: { value: _vm.body },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.body = $event.target.value
+                        }
                       }
-                    }
-                  })
+                    },
+                    [
+                      _vm._v(
+                        "                    go<!--    adding at js here after play around https://github.com/muchirasamwel/Play-With-At-JS-->\n                    "
+                      )
+                    ]
+                  )
                 ]),
                 _vm._v(" "),
                 _c("button", { staticClass: "btn btn-xs btn-primary" }, [
@@ -56506,7 +56518,7 @@ var render = function() {
               ]
             )
           ])
-        : _c("div", { domProps: { textContent: _vm._s(_vm.body) } })
+        : _c("div", { domProps: { innerHTML: _vm._s(_vm.body) } })
     ]),
     _vm._v(" "),
     _vm.canUpdate
