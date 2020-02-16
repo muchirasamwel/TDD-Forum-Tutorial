@@ -2,7 +2,7 @@
     <li class="dropdown" v-if="notifications.length">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-            <span class="glyphicon glyphicon-bell"/>
+            <i class="fa fa-bell"/>
         </a>
 
         <ul class="dropdown-menu">

@@ -56606,7 +56606,7 @@ var staticRenderFns = [
         staticClass: "dropdown-toggle",
         attrs: { href: "#", "data-toggle": "dropdown" }
       },
-      [_c("span", { staticClass: "glyphicon glyphicon-bell" })]
+      [_c("i", { staticClass: "fa fa-bell" })]
     )
   }
 ]

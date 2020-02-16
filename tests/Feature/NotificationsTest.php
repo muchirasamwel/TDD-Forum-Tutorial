@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Notifications\DatabaseNotification;
 use Tests\TestCase;
+use App\Listeners\NotifyThreadSubscribers;
 
 class NotificationsTest extends TestCase
 {
