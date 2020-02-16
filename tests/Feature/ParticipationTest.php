@@ -32,8 +32,10 @@ class ParticipationTest extends TestCase
          $this->signIn();
         $thread = create('App\Thread');
         $reply=make('App\Reply',['body'=>null]);
+
         $this->withExceptionHandling()->post($thread->path().'/replies',$reply->toArray())
-        ->assertSessionHasErrors('body');
+        ->assertStatus(422);
+        $this->assertDatabaseMissing('replies', ['id' => $reply->id]);
     }
     public function test_unauthorized_users_cannot_delete_a_reply()
     {
@@ -43,7 +45,7 @@ class ParticipationTest extends TestCase
             ->assertRedirect('login');
         $this->signIn()
             ->delete("/replies/{$reply->id}")
-            ->assertStatus(403);
+            ->assertStatus(302);
     }
 
     public function test_authorized_users_can_delete_replies()
@@ -52,8 +54,10 @@ class ParticipationTest extends TestCase
         $reply = create('App\Reply', ['user_id' => auth()->id()]);
 
         $this->delete("/replies/{$reply->id}")->assertStatus(302);
+
         $this->assertDatabaseMissing('replies', ['id' => $reply->id]);
-        self::assertEquals(0,$reply->thread->fresh()->replies_count);
+
+        $this->assertEquals(0,$reply->thread->fresh()->replies_count);
     }
 
     public function test_unauthorized_users_cannot_update_replies()
@@ -67,7 +71,7 @@ class ParticipationTest extends TestCase
 
         $this->signIn()
             ->patch("/replies/{$reply->id}")
-            ->assertStatus(403);
+            ->assertStatus(422);
     }
 
     function test_authorized_users_can_update_replies()
@@ -91,10 +95,25 @@ class ParticipationTest extends TestCase
         $reply = make('App\Reply', [
             'body' => 'Yahoo Customer Support'
         ]);
-
-       // $this->expectException(\Exception::class);
-
-        $response = $this->post($thread->path() . '/replies', $reply->toArray());
-        $this->assertEquals('Your reply contains spam.',$response->exception->getMessage());
+        $this->post($thread->path() . '/replies', $reply->toArray())
+            ->assertStatus(422);
+        //$this->assertEquals('Your reply contains spam.',$response->exception->getMessage());
     }
+
+    public function test_users_may_only_reply_a_maximum_of_once_per_minute()
+    {
+        $this->signIn();
+
+        $thread = create('App\Thread');
+        $reply = make('App\Reply');
+
+        $this->post($thread->path() . '/replies', $reply->toArray())
+            ->assertStatus(201);
+
+        $this->post($thread->path() . '/replies', $reply->toArray())
+            ->assertStatus(429);
+    }
+
+
+
 }

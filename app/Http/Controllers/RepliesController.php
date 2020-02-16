@@ -6,6 +6,7 @@ use App\Inspections\Spam;
 use App\Reply;
 use App\Thread;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class RepliesController extends Controller
 {
@@ -21,6 +22,11 @@ class RepliesController extends Controller
 
     public function store($channel_id, Thread $thread)
     {
+        if (Gate::denies('create', new Reply)) {
+            return response(
+                'You posted a few seconds. Please wait', 429
+            );
+        }
 
         try {
             $this->validate(request(), ['body' => 'required|spam_free']);
@@ -39,8 +45,6 @@ class RepliesController extends Controller
 
     public function destroy(Reply $reply)
     {
-        $this->validate(request(), ['body' => 'required|spam_free']);
-
         $reply->delete();
 
         if (request()->expectsJson()) {
@@ -52,7 +56,7 @@ class RepliesController extends Controller
     public function update(Reply $reply)
     {
         try {
-            $this->validateReply();
+            $this->validate(request(), ['body' => 'required|spam_free']);
 
             $reply->update(request(['body']));
         } catch (\Exception $e) {

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use function foo\func;
 
@@ -28,12 +29,19 @@ class Reply extends Model
     {
      return $this->belongsTo(User::class,'user_id');
     }
+
     public function thread()
     {
         return $this->belongsTo(Thread::class);
     }
+
     public function path()
     {
         return $this->thread->path() . "#reply-{$this->id}";
+    }
+
+    public function wasJustPublished()
+    {
+        return $this->created_at->gt(Carbon::now()->subMinute());
     }
 }
