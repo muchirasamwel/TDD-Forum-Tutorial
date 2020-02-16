@@ -6,11 +6,13 @@ use App\Channel;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+
 class AppServiceProvider extends ServiceProvider
 {
     protected $policies = [
         'App\Thread' => 'App\Policies\ThreadPolicy',
     ];
+
     /**
      * Register any application services.
      *
@@ -37,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
                 return Channel::all();
             });
             $view->with('channels', $channels);
-    });
+        });
+        \Validator::extend('spam_free', 'App\Rules\SpamFree@passes');
     }
 }
