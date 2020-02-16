@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c760cc74-11dd-45e9-8fe4-c128f85ce297" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Inspections/KeyHeldDown.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Inspections/Spam.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Spam.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Inspections/InvalidKeyWords.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/threads/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ReadThreadsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ReadThreadsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ParticipationTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ParticipationTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/SpamTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/SpamTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,11 +160,13 @@
     <property name="settings.editor.splitter.proportion" value="0.25401607" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Filters" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Inspections" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/Filters" />
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.ChannelTest.test_channel_has_threads">
@@ -225,7 +229,7 @@
       <workItem from="1581501174888" duration="10160000" />
       <workItem from="1581660411425" duration="2248000" />
       <workItem from="1581749755332" duration="872000" />
-      <workItem from="1581787492852" duration="14108000" />
+      <workItem from="1581787492852" duration="20686000" />
     </task>
     <servers />
   </component>
@@ -260,10 +264,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="635" y="82" key="#com.intellij.openapi.keymap.impl.ui.EditKeymapsDialog/0.0.1280.800@0.0.1280.800" timestamp="1580614168222" />
-    <state x="556" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581793370239">
+    <state x="556" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581843294765">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="556" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.800@0.0.1280.800" timestamp="1581793370239" />
+    <state x="556" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1280.800@0.0.1280.800" timestamp="1581843294765" />
     <state x="756" y="162" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581794715699">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -280,10 +284,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="788" y="158" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1/0.0.1280.800@0.0.1280.800" timestamp="1580614577631" />
-    <state x="450" y="223" key="NewPhpClassDialog" timestamp="1580642923789">
+    <state x="422" y="223" key="NewPhpClassDialog" timestamp="1581843532331">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="450" y="223" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1580642923789" />
+    <state x="422" y="223" key="NewPhpClassDialog/0.0.1280.800@0.0.1280.800" timestamp="1581843532331" />
     <state x="155" y="48" key="SettingsEditor" timestamp="1580558935845">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
@@ -304,21 +308,10 @@
       <screen x="0" y="0" width="1280" height="800" />
     </state>
     <state x="298" y="157" width="683" height="486" key="find.popup/0.0.1280.800@0.0.1280.800" timestamp="1581513525402" />
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1581837855190">
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup" timestamp="1581845496535">
       <screen x="0" y="0" width="1280" height="800" />
     </state>
-    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1581837855190" />
+    <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.0.1280.800@0.0.1280.800" timestamp="1581845496535" />
     <state x="305" y="124" width="670" height="676" key="search.everywhere.popup/0.23.1280.777@0.23.1280.777" timestamp="1581792468894" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/Thread.php</url>
-          <line>39</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

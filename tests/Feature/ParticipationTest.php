@@ -3,8 +3,6 @@
 namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ParticipationTest extends TestCase
@@ -15,7 +13,6 @@ class ParticipationTest extends TestCase
         $reply = create('App\Reply');
         $response=$this->post($thread->path()."/replies",$reply->toArray())
             ->assertDontSee($reply->body);
-       // dump($response);
     }
     public function test_authenticated_user_can_participate_in_threads()
     {
@@ -49,7 +46,7 @@ class ParticipationTest extends TestCase
             ->assertStatus(403);
     }
 
-    function test_authorized_users_can_delete_replies()
+    public function test_authorized_users_can_delete_replies()
     {
         $this->signIn();
         $reply = create('App\Reply', ['user_id' => auth()->id()]);
@@ -59,7 +56,7 @@ class ParticipationTest extends TestCase
         self::assertEquals(0,$reply->thread->fresh()->replies_count);
     }
 
-    function test_unauthorized_users_cannot_update_replies()
+    public function test_unauthorized_users_cannot_update_replies()
     {
         $this->withExceptionHandling();
 
@@ -86,4 +83,18 @@ class ParticipationTest extends TestCase
         $this->assertDatabaseHas('replies', ['id' => $reply->id, 'body' => $updatedReply]);
     }
 
+    public function test_a_reply_that_contain_spam_may_not_be_created()
+    {
+        $this->signIn();
+
+        $thread = create('App\Thread');
+        $reply = make('App\Reply', [
+            'body' => 'Yahoo Customer Support'
+        ]);
+
+       // $this->expectException(\Exception::class);
+
+        $response = $this->post($thread->path() . '/replies', $reply->toArray());
+        $this->assertEquals('Your reply contains spam.',$response->exception->getMessage());
+    }
 }

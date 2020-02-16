@@ -13,7 +13,7 @@
                                 <div class="card">
                                     <div class="card-header level">
                                         <a href="{{$thread->path()}}" class="flex">
-                                            @if ($thread->hasUpdatesFor(auth()->user()))
+                                            @if (auth()->check() && $thread->hasUpdatesFor(auth()->user()))
                                                 <strong>
                                                     {{ $thread->title }}
                                                 </strong>
