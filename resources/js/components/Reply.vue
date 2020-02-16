@@ -15,12 +15,14 @@
         </div>
         <div class="card-body">
             <div v-if="editing">
-                <div class="form-group">
-                    <textarea class="form-control" v-model="body"></textarea>
-                </div>
+                <form @submit.prevent="update">
+                    <div class="form-group">
+                        <textarea class="form-control" v-model="body" required="true" ></textarea>
+                    </div>
 
-                <button class="btn btn-xs btn-primary" @click="update">Update</button>
-                <button class="btn btn-xs btn-link" @click="editing = false">Cancel</button>
+                    <button class="btn btn-xs btn-primary">Update</button>
+                    <button class="btn btn-xs btn-link" @click="editing = false" type="button">Cancel</button>
+                </form>
             </div>
 
             <div v-else v-text="body"></div>
@@ -63,7 +65,7 @@
                     body: this.body
                 }).catch(error => {
                     flash(error.response.data, 'danger');
-                    });
+                });
                 this.editing = false;
                 flash('Updated!');
             },

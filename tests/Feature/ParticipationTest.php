@@ -71,7 +71,7 @@ class ParticipationTest extends TestCase
 
         $this->signIn()
             ->patch("/replies/{$reply->id}")
-            ->assertStatus(422);
+            ->assertStatus(302);
     }
 
     function test_authorized_users_can_update_replies()

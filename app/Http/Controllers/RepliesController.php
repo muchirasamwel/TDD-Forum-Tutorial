@@ -30,19 +30,6 @@ class RepliesController extends Controller
             'user_id' => auth()->id()
         ]);
 
-//        preg_match_all('/\@([^\s\.]+)/', $reply->body, $matches);
-//
-//        $names=$matches[1];
-//
-//        foreach ($names as $name)
-//        {
-//            $user=User::whereName($name)->first();
-//
-//            if ($user){
-//                $user->notify(new YouWereMentioned($reply));
-//            }
-//        }
-
         return $reply->load('owner');
 
     }
@@ -59,15 +46,10 @@ class RepliesController extends Controller
 
     public function update(Reply $reply)
     {
-        try {
-            $this->validate(request(), ['body' => 'required|spam_free']);
+        $this->validate(request(), ['body' => 'required|spam_free']);
 
-            $reply->update(request(['body']));
-        } catch (\Exception $e) {
-            return response(
-                'Sorry, your reply seems to be a spam.', 422
-            );
-        }
+        $reply->update(request(['body']));
+
     }
 
 }
