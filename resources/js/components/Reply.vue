@@ -35,9 +35,10 @@
 <script>
     import Favorite from './Favorite.vue';
     import moment from 'moment';
+
     export default {
         props: ['data'],
-        components: { Favorite },
+        components: {Favorite},
         data() {
             return {
                 editing: false,
@@ -46,8 +47,8 @@
             };
         },
         computed: {
-            ago(){
-                return moment(this.data.created_at).fromNow()+"...";
+            ago() {
+                return moment(this.data.created_at).fromNow() + "...";
             },
             signedIn() {
                 return window.App.signedIn;
@@ -60,7 +61,9 @@
             update() {
                 axios.patch('/replies/' + this.data.id, {
                     body: this.body
-                });
+                }).catch(error => {
+                    flash(error.response.data, 'danger');
+                    });
                 this.editing = false;
                 flash('Updated!');
             },

@@ -22,22 +22,19 @@ class RepliesController extends Controller
     public function store($channel_id, Thread $thread)
     {
 
-        $this->validate(request(), [
-            'body' => 'required'
-        ]);
+        try {
+            $this->validateReply();
 
-        $this->validateReply();
-
-        $reply = $thread->addReply([
-            'body' => request('body'),
-            'user_id' => auth()->id()
-        ]);
-
-        //dd($reply);
-        if (request()->expectsJson()) {
-            return $reply->load('owner');
+            $reply = $thread->addReply([
+                'body' => request('body'),
+                'user_id' => auth()->id()
+            ]);
+        } catch (\Exception $e) {
+            return response(
+                'Sorry, your reply seems to be a spam.', 422
+            );
         }
-        return back()->with('flash', 'Your reply has been left.');
+        return $reply->load('owner');
     }
 
     public function destroy(Reply $reply)
@@ -55,13 +52,15 @@ class RepliesController extends Controller
     public function update(Reply $reply)
     {
 
-        $this->authorize('update', $reply);
+        try {
+            $this->validateReply();
 
-        $this->validateReply();
-
-        $this->validate(request(), ['body' => 'required']);
-
-        $reply->update(request(['body']));
+            $reply->update(request(['body']));
+        } catch (\Exception $e) {
+            return response(
+                'Sorry, your reply seems to be a spam.', 422
+            );
+        }
     }
 
     protected function validateReply()
