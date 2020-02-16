@@ -24,7 +24,7 @@ class MentionUsersTest extends TestCase
         ]);
 
         $response = $this->json('post', $thread->path() . '/replies', $reply->toArray());
-       // dd($response->original);
+
         $this->assertCount(1, $jane->fresh()->notifications);
     }
 }

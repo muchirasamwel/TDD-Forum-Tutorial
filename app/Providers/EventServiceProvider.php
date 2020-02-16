@@ -20,6 +20,7 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\ThreadHasReply'=>[
             'App\Listeners\NotifyThreadSubscribers',
+            'App\Listeners\NotifyMentionedUsers',
         ]
     ];
 
